@@ -1,0 +1,14 @@
+#загрузка данных с Yahoo и отрисовка графиков  
+
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.finance import quotes_historical_yahoo
+
+startDate = (2012,1,1)
+endDate = (2012,10,11)
+rts = quotes_historical_yahoo('RTS.RS', startDate, endDate)
+
+rts = np.array(rts)
+
+plt.plot(rts[:,2])
+plt.show()
